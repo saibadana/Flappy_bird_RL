@@ -1,91 +1,204 @@
-🐦 Flappy Bird Reinforcement Learning using Deep Q-Network (DQN)
-📌 Overview
+# 🐦 Flappy Bird AI using Deep Q-Network (DQN)
 
-This project implements an autonomous Flappy Bird agent using Deep Reinforcement Learning. The agent learns to play the game through trial and error using the Deep Q-Network (DQN) algorithm, without being explicitly programmed how to play.
+An autonomous Reinforcement Learning agent that learns to play Flappy Bird using the **Deep Q-Network (DQN)** algorithm. Instead of following predefined rules, the agent learns an optimal policy through trial-and-error interactions with the game environment to maximize long-term rewards.
 
-The objective of the agent is to maximize its cumulative reward by learning the optimal action (flap or do nothing) based on the current game state.
+---
 
-🚀 Features
-Deep Q-Network (DQN) based agent
-Experience Replay for stable learning
-Epsilon-Greedy Exploration Strategy
-Neural Network for Q-value approximation
-Model checkpoint saving
-Autonomous gameplay after training
-🛠️ Technologies Used
-Python
-PyTorch
-Gymnasium
-Flappy Bird Gymnasium Environment
-NumPy
-📂 Project Structure
-FLAPPY-BIRD-RL/
+## 📌 Project Overview
+
+Flappy Bird is a challenging game where the player must navigate a bird through gaps between pipes without colliding.
+
+In this project, a Deep Reinforcement Learning agent is trained to solve the game by interacting with the environment, collecting rewards, and continuously improving its decision-making ability using a Deep Q-Network (DQN).
+
+The project demonstrates the practical implementation of value-based Reinforcement Learning using PyTorch.
+
+---
+
+## 🎯 Objectives
+
+- Train an autonomous Flappy Bird agent using Deep Q-Learning.
+- Learn an optimal policy through interaction with the environment.
+- Stabilize learning using Experience Replay.
+- Balance exploration and exploitation using an Epsilon-Greedy strategy.
+- Save trained model checkpoints for future gameplay.
+
+---
+
+## 🚀 Key Features
+
+- ✅ Deep Q-Network (DQN) implementation
+- ✅ Experience Replay Buffer
+- ✅ Epsilon-Greedy Exploration
+- ✅ Neural Network-based Q-value approximation
+- ✅ Model checkpoint saving
+- ✅ Autonomous gameplay after training
+- ✅ PyTorch implementation
+- ✅ Trained for **5000+ episodes**
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- PyTorch
+- Gymnasium
+- Flappy Bird Gymnasium Environment
+- NumPy
+
+---
+
+## 📂 Project Structure
+
+```
+Flappy_bird_RL/
 │
-├── Agent.py              # Main training script
-├── model.py              # Deep Q-Network architecture
-├── replay_memory.py      # Experience replay buffer
-├── utils.py              # Helper functions
-├── checkpoints/          # Saved model weights
-├── requirements.txt      # Project dependencies
-└── README.md             # Project documentation
+├── agent.py                 # Training loop
+├── dqn.py                   # Deep Q-Network model
+├── experience_replay.py     # Replay buffer
+├── checkpoints/             # Saved model weights
+├── requirements.txt
+├── README.md
+└── assets/
+```
 
-Note: The file structure above is an example. Update it if your project contains different filenames or folders.
+> **Note:** Update the file names above if your repository structure differs.
 
-⚙️ Installation
+---
 
-Clone the repository:
+## ⚙️ Installation
 
-git clone git@github.com:saibadana/Flappy_bird_RL.git
+### Clone the Repository
 
-Move into the project directory:
+```bash
+git clone https://github.com/saibadana/Flappy_bird_RL.git
+```
 
+### Navigate to the Project
+
+```bash
 cd Flappy_bird_RL
+```
 
-Install the required packages:
+### Install Dependencies
 
+```bash
 pip install -r requirements.txt
-▶️ Training the Agent
+```
 
-Run:
+---
 
-python Agent.py
+## ▶️ Train the Agent
 
-Training will continue until it is stopped manually or according to the stopping condition defined in the code.
+Run the training script:
 
-🧠 How It Works
-The agent observes the current game state.
-The DQN predicts the Q-value for each possible action.
-The agent selects an action using the epsilon-greedy strategy.
-The environment returns the next state and reward.
-The experience is stored in replay memory.
-Mini-batches are sampled to train the neural network.
-Over time, the agent learns an effective policy to survive longer and achieve higher scores.
-📈 Reinforcement Learning Concepts Used
-Agent
-Environment
-State
-Action
-Reward
-Deep Q-Network (DQN)
-Experience Replay
-Target Network (if implemented)
-Epsilon-Greedy Exploration
-Neural Networks
-🎯 Future Improvements
-Double DQN
-Dueling DQN
-Prioritized Experience Replay
-Training visualizations
-Hyperparameter tuning
-Performance comparison between different RL algorithms
-📚 Learning Outcome
+```bash
+python agent.py
+```
 
-This project helped me understand the practical implementation of Reinforcement Learning, including experience replay, exploration vs. exploitation, neural network training, and how an agent learns optimal behavior through interaction with an environment.
+The agent will begin learning by interacting with the game environment and periodically save model checkpoints.
 
-👨‍💻 Author
+---
 
-Sai Kumar
+## 🧠 How the DQN Agent Learns
 
-Final Year B.Tech Student
+1. Observe the current game state.
+2. Predict Q-values using the Deep Q-Network.
+3. Select an action using the Epsilon-Greedy policy.
+4. Execute the action in the environment.
+5. Receive the reward and next state.
+6. Store the experience in Replay Memory.
+7. Sample mini-batches from replay memory.
+8. Update the neural network using gradient descent.
+9. Repeat the process for **5000+ training episodes**.
 
-Aspiring Data Scientist
+---
+
+## 📈 Reinforcement Learning Concepts
+
+- Deep Q-Network (DQN)
+- Markov Decision Process (MDP)
+- Agent & Environment
+- State Representation
+- Action Space
+- Reward Function
+- Experience Replay
+- Q-Learning
+- Neural Networks
+- Epsilon-Greedy Exploration
+
+---
+
+## 📊 Training Workflow
+
+```
+Game Environment
+        │
+        ▼
+Observe State
+        │
+        ▼
+Deep Q-Network
+        │
+        ▼
+Choose Action
+        │
+        ▼
+Receive Reward
+        │
+        ▼
+Store Experience
+        │
+        ▼
+Replay Memory
+        │
+        ▼
+Update Neural Network
+        │
+        ▼
+Improved Policy
+```
+
+---
+
+## 🎯 Future Improvements
+
+- Double DQN
+- Dueling DQN
+- Prioritized Experience Replay
+- Hyperparameter Optimization
+- TensorBoard Training Visualization
+- Performance comparison with PPO and A2C
+- Model deployment for interactive gameplay
+
+---
+
+## 📚 Learning Outcomes
+
+This project strengthened my understanding of:
+
+- Deep Reinforcement Learning
+- Deep Q-Network (DQN)
+- Exploration vs. Exploitation
+- Experience Replay
+- Neural Network training with PyTorch
+- Reward optimization
+- Sequential decision-making
+- Reinforcement Learning workflows
+
+---
+
+## 👨‍💻 Author
+
+**Sai Kumar**
+
+🎓 Final Year B.Tech (Computer Science & Engineering)
+
+🔗 GitHub: https://github.com/saibadana
+
+🔗 LinkedIn: https://www.linkedin.com/in/sai-badana-a52472339/
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving the repository a ⭐ on GitHub.
